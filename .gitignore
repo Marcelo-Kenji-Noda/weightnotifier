@@ -1,1 +1,3 @@
 virtualenvWeightNotify
+src/googlesheets/token/
+*.ini
