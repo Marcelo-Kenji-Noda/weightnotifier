@@ -22,7 +22,11 @@ def to_list(text: str, dtype: type = str) -> list:
 
 def get_config(ARQUIVO_PATH: str = HOME_PATH) -> dict:
     config = ConfigParser()
-    config.read(ARQUIVO_PATH)
+    print(HOME_PATH)
+    print(ARQUIVO_PATH+'/config.ini')
+    config.read(ARQUIVO_PATH+'/config.ini')
+
+    print(config.sections())
     configuration = {
         'api':{
             'scopes': to_list(config['api']['scopes'])

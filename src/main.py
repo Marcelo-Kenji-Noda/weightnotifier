@@ -1,8 +1,8 @@
-from googlesheets.googlesheets import test_api
-import googlesheets.auth
+from googlesheets.sheets import get_values
 
 def main():
-    test_api()
+    values = get_values()
+    print(values)
     return
 
 if __name__ == '__main__':

@@ -6,7 +6,7 @@ from googleapiclient.errors import HttpError
 
 import os.path
 
-from config import get_config
+from .config import get_config
 
 def get_credentials(config):
     HOME = os.path.dirname(os.path.relpath(__file__))
@@ -37,6 +37,8 @@ def get_values():
 
         # Call the Sheets API
         sheet = service.spreadsheets()
+        print(sheet)
+        print(config['sheets']['range'])
         result = sheet.values().get(
             spreadsheetId=config['sheets']['sheet_id'],
             range=config['sheets']['range']).execute()
