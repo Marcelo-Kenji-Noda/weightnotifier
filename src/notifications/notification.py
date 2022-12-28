@@ -1,14 +1,14 @@
 from winotify import Notification, audio
 from datetime import date
 
-def main():
-    today = date.today().strftime("%d/%m/%Y")
+def create_toast():
+    today = date.today().strftime("%dd/%mm/%YYYY")
     title = f"Adicionar medidas: {today}"
     toast = Notification(
-        app_id="Weight App",
+        app_id="windows app",
         title= title,
         msg="Adicione as medidas na planilha!",
-        icon=r"C:\Users\kenji\dev\weightNotifier\src\static\1350095.png")
+        icon="healthyicon.png")
 
     toast.set_audio(audio.Mail, loop=False)
     toast.add_actions(
@@ -16,6 +16,3 @@ def main():
         launch="https://forms.gle/ck5gjqZwT4KazoSz7/")
     toast.show()
     return
-
-if __name__ == '__main__':
-    main()
